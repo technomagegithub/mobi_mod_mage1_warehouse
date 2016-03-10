@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- http://nwdthemes.com/2014/09/25/adminhtml-xml-details/ -->
+<config>
+    <modules>
+        <Praxigento_Warehouse>
+            <version>0.1.0</version>
+        </Praxigento_Warehouse>
+    </modules>
+    <global>
+        <models>
+            <prxgt_wrhs_model>
+                <class>Praxigento_Warehouse_Model_Own</class>
+                <resourceModel>prxgt_wrhs_resource</resourceModel>
+            </prxgt_wrhs_model>
+            <prxgt_wrhs_resource>
+                <class>Praxigento_Warehouse_Resource_Own</class>
+                <entities></entities>
+            </prxgt_wrhs_resource>
+        </models>
+        <resources>
+            <prxgt_wrhs_setup>
+                <setup>
+                    <module>Praxigento_Warehouse</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </prxgt_wrhs_setup>
+        </resources>
+    </global>
+    <prxgt>
+        <di>
+            <prxgt_wrhs>
+            </prxgt_wrhs>
+        </di>
+    </prxgt>
+</config>

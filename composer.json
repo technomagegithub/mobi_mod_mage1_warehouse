@@ -1,0 +1,29 @@
+{
+  "name": "praxigento/mobi_mod_mage1_warehouse",
+  "description": "MOBI: Magento 1 integration code for Praxigento_Warehouse module.",
+  "type": "magento-module",
+  "homepage": "https://github.com/praxigento/mobi_mod_mage1_warehouse",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Alex Gusev",
+      "email": "alex@flancer64.com"
+    }
+  ],
+  "require": {
+    "praxigento/mobi_mod_common_warehouse": "dev-master",
+    "praxigento/mobi_mod_mage1_core": "dev-master"
+  },
+  "extra": {
+    "map": [
+      [
+        "src/app/code/community/Praxigento/Warehouse",
+        "app/code/community/Praxigento/Warehouse"
+      ],
+      [
+        "src/app/etc/modules/Praxigento_Warehouse.xml",
+        "app/etc/modules/Praxigento_Warehouse.xml"
+      ]
+    ]
+  }
+}

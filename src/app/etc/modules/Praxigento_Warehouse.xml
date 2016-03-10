@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Praxigento_Warehouse>
+            <active>true</active>
+            <codePool>community</codePool>
+            <depends>
+                <Praxigento_Core/>
+            </depends>
+        </Praxigento_Warehouse>
+    </modules>
+</config>
