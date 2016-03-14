@@ -27,6 +27,31 @@
                 </connection>
             </prxgt_wrhs_setup>
         </resources>
+        <blocks>
+            <adminhtml>
+                <rewrite>
+                    <catalog_product_grid>Praxigento_Warehouse_Block_Adminhtml_Catalog_Product_Grid</catalog_product_grid>
+                </rewrite>
+            </adminhtml>
+        </blocks>
+        <helpers>
+            <catalog>
+                <rewrite>
+                    <data>Praxigento_Warehouse_Helper_Catalog_Data</data>
+                </rewrite>
+            </catalog>
+        </helpers>
+        <events>
+            <eav_collection_abstract_load_before>
+                <observers>
+                    <prxgt_wrhs_observer>
+                        <type>singleton</type>
+                        <class>prxgt_wrhs_model/observer</class>
+                        <method>eavCollectionAbstractLoadBefore</method>
+                    </prxgt_wrhs_observer>
+                </observers>
+            </eav_collection_abstract_load_before>
+        </events>
     </global>
     <prxgt>
         <di>
