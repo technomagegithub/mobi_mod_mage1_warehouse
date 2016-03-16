@@ -5,7 +5,7 @@
 namespace Praxigento\Warehouse;
 
 use Praxigento\Warehouse\Lib\Entity\Lot;
-use Praxigento\Warehouse\Lib\Entity\Quant;
+use Praxigento\Warehouse\Lib\Entity\Quantity;
 use Praxigento\Warehouse\Lib\Entity\Warehouse;
 use Praxigento_Warehouse_Config as Cfg;
 
@@ -19,11 +19,11 @@ class Install_0_1_0_ManualTest extends \Praxigento\Core\Lib\Test\BaseTestCase {
         /** @var  $conn \Varien_Db_Adapter_Pdo_Mysql */
         $conn = \Mage::getSingleton('core/resource_setup', Cfg::CFG_MOD_SETUP)->getConnection();
 
-        $tblQuant = $resource->getTable(Quant::ENTITY_NAME);
+        $tblQty = $resource->getTable(Quantity::ENTITY_NAME);
         $tblLot = $resource->getTable(Lot::ENTITY_NAME);
         $tblWarehouse = $resource->getTable(Warehouse::ENTITY_NAME);
 
-        $conn->dropTable($tblQuant);
+        $conn->dropTable($tblQty);
         $conn->dropTable($tblLot);
         $conn->dropTable($tblWarehouse);
 

@@ -1,5 +1,5 @@
 <?php
-use Praxigento\Warehouse\Lib\Entity\Quant;
+use Praxigento\Warehouse\Lib\Entity\Quantity;
 use Praxigento_Warehouse_Config as Cfg;
 
 /**
@@ -28,12 +28,12 @@ class Praxigento_Warehouse_Model_Own_Observer {
             /** @var  $collection \Mage_Catalog_Model_Resource_Product_Collection */
             $collection = $eventData->getCollection();
             $rsrc = $collection->getResource();
-            $tblQuant = $rsrc->getTable(Quant::ENTITY_NAME);
+            $tblQuant = $rsrc->getTable(Quantity::ENTITY_NAME);
             $as = self::AS_TBL;
             $tbl = [ $as => $tblQuant ];
             $eid = Cfg::E_COMMON_A_ENTITY_ID;
-            $on = Quant::ATTR_PRODUCT_REF . '=' . $eid;
-            $fields = [ self::AS_FLD_QTY => 'SUM(' . $as . '.' . Quant::ATTR_TOTAL . ')' ];
+            $on = Quantity::ATTR_PRODUCT_REF . '=' . $eid;
+            $fields = [ self::AS_FLD_QTY => 'SUM(' . $as . '.' . Quantity::ATTR_TOTAL . ')' ];
             $collection->joinTable($tbl, $on, $fields, null, 'left');
             $collection->groupByAttribute($eid);
             // $sql = $collection->getSelectSql(true);
